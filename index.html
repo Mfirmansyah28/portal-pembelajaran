@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Pembelajaran Pendidikan Pancasila - XI Akuntansi 2</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#090d16',
+                        },
+                        crimson: {
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'float-delayed': 'float 4s ease-in-out 2s infinite',
+                        'bounce-subtle': 'bounceSubtle 2s infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        bounceSubtle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="text-slate-800 bg-grid-pattern antialiased selection:bg-crimson-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- ==================== 1. HALAMAN COVER ==================== -->
+    <section id="coverView" class="min-h-screen flex flex-col justify-between p-4 md:p-8 relative overflow-hidden transition-all duration-700 ease-in-out">
+        <!-- Background Lighting Effects -->
+        <div class="absolute top-10 left-10 w-72 h-72 bg-crimson-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-navy-900/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Cover Header Badge -->
+        <div class="max-w-6xl mx-auto w-full pt-4 flex justify-between items-center z-10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-crimson-600 text-white flex items-center justify-center font-extrabold text-xl shadow-lg shadow-crimson-600/30">
+                    PP
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-crimson-600 block">Portal Edukasi</span>
+                    <span class="text-sm font-semibold text-navy-900">SMK Kelas XI Akuntansi 2</span>
+                </div>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 bg-white/80 backdrop-blur border border-slate-200 px-3 py-1.5 rounded-full text-xs font-medium text-slate-600 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Mode Belajar Aktif
+            </div>
+        </div>
+
+        <!-- Main Cover Body Content -->
+        <div class="max-w-6xl mx-auto w-full my-auto py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center z-10">
+            <!-- Left Side: Hero Text & Call to Action -->
+            <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-crimson-50 border border-crimson-100 text-crimson-700 font-bold text-xs uppercase tracking-wide animate-bounce-subtle">
+                    <span>🇲🇨</span> PENDIDIKAN PANCASILA
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900 leading-tight tracking-tight">
+                    PORTAL PEMBELAJARAN
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-crimson-600 to-navy-900 mt-2">
+                        Periodisasi Pemberlakuan UUD di Indonesia
+                    </span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-600 font-medium max-w-xl mx-auto lg:mx-0">
+                    Selamat datang peserta didik <span class="text-navy-900 font-bold underline decoration-crimson-500 decoration-2">Kelas XI Akuntansi 2</span>. Mari pelajari periodisasi konstitusi dan sejarah UUD di Indonesia secara interaktif!
+                </p>
+
+                <!-- Tagline Badge -->
+                <div class="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm max-w-lg mx-auto lg:mx-0">
+                    <p class="text-xs sm:text-sm font-bold text-navy-900 flex flex-wrap justify-center lg:justify-start gap-2">
+                        <span class="text-crimson-600">Belajar</span> • 
+                        <span class="text-navy-800">Berdiskusi</span> • 
+                        <span class="text-crimson-600">Beraktivitas</span> • 
+                        <span class="text-navy-800">Bermain</span> • 
+                        <span class="text-crimson-600">Berkarya</span>
+                    </p>
+                </div>
+
+                <!-- Main CTA Button -->
+                <div class="pt-2">
+                    <button onclick="goToLogin()" class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 text-white font-bold text-lg rounded-2xl shadow-xl shadow-crimson-600/30 hover:shadow-2xl hover:shadow-crimson-600/40 transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto cursor-pointer">
+                        <span>🚀 MULAI BELAJAR</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: SMK Student Vector Illustration -->
+            <div class="lg:col-span-5 relative flex justify-center items-center">
+                <div class="relative w-full max-w-md aspect-square bg-gradient-to-b from-slate-100 to-white rounded-3xl p-6 border border-slate-200 shadow-2xl flex flex-col justify-between overflow-hidden">
+                    
+                    <!-- Decorative Floating Elements -->
+                    <div class="absolute top-4 left-4 bg-white p-2.5 rounded-xl shadow-md border border-slate-100 animate-float">
+                        <span class="text-2xl">📘</span>
+                    </div>
+                    <div class="absolute top-10 right-6 bg-white p-2.5 rounded-xl shadow-md border border-slate-100 animate-float-delayed">
+                        <span class="text-2xl">💻</span>
+                    </div>
+                    <div class="absolute bottom-16 left-6 bg-white p-2.5 rounded-xl shadow-md border border-slate-100 animate-float-delayed">
+                        <span class="text-2xl">⚖️</span>
+                    </div>
+                    <div class="absolute bottom-6 right-8 bg-white p-2.5 rounded-xl shadow-md border border-slate-100 animate-float">
+                        <span class="text-2xl">✏️</span>
+                    </div>
+
+                    <!-- Custom SMK Students SVG -->
+                    <div class="w-full h-full flex items-center justify-center my-auto pt-4">
+                        <svg viewBox="0 0 500 400" class="w-full h-auto drop-shadow-xl">
+                            <circle cx="250" cy="200" r="170" fill="#f1f5f9" />
+                            <circle cx="250" cy="200" r="140" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6"/>
+
+                            <!-- Student 1 (Laptop) -->
+                            <g id="student1">
+                                <path d="M 120 320 Q 120 240 160 230 Q 200 240 200 320 Z" fill="#ffffff" stroke="#1e293b" stroke-width="3"/>
+                                <path d="M 150 230 L 160 280 L 170 230 Z" fill="#dc2626"/>
+                                <circle cx="160" cy="180" r="32" fill="#ffedd5" stroke="#1e293b" stroke-width="3"/>
+                                <path d="M 128 175 C 128 135 192 135 192 175 C 192 160 128 160 128 175 Z" fill="#334155"/>
+                                <circle cx="150" cy="180" r="3.5" fill="#1e293b"/>
+                                <circle cx="170" cy="180" r="3.5" fill="#1e293b"/>
+                                <path d="M 155 192 Q 160 198 165 192" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+                                <rect x="130" y="250" width="60" height="40" rx="4" fill="#0f172a" stroke="#ffffff" stroke-width="2"/>
+                                <path d="M 120 290 L 200 290 L 195 296 L 125 296 Z" fill="#94a3b8"/>
+                            </g>
+
+                            <!-- Student 2 (Center: Boy with Book) -->
+                            <g id="student2">
+                                <path d="M 200 330 Q 200 220 250 210 Q 300 220 300 330 Z" fill="#ffffff" stroke="#1e293b" stroke-width="3"/>
+                                <polygon points="245,210 255,210 258,260 250,270 242,260" fill="#dc2626"/>
+                                <circle cx="250" cy="160" r="36" fill="#ffedd5" stroke="#1e293b" stroke-width="3"/>
+                                <path d="M 214 155 C 214 120 286 120 286 155 C 270 135 230 135 214 155 Z" fill="#1e293b"/>
+                                <rect x="228" y="152" width="18" height="14" rx="3" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+                                <rect x="254" y="152" width="18" height="14" rx="3" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+                                <line x1="246" y1="159" x2="254" y2="159" stroke="#1e293b" stroke-width="2"/>
+                                <circle cx="237" cy="159" r="2.5" fill="#1e293b"/>
+                                <circle cx="263" cy="159" r="2.5" fill="#1e293b"/>
+                                <path d="M 242 176 Q 250 184 258 176" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M 220 240 L 250 250 L 280 240 L 280 280 L 250 290 L 220 280 Z" fill="#b91c1c" stroke="#1e293b" stroke-width="2"/>
+                                <text x="228" y="268" font-size="10" font-weight="bold" fill="#ffffff">UUD</text>
+                                <text x="256" y="268" font-size="10" font-weight="bold" fill="#ffffff">1945</text>
+                            </g>
+
+                            <!-- Student 3 (Right: Document Holder) -->
+                            <g id="student3">
+                                <path d="M 300 320 Q 300 240 340 230 Q 380 240 380 320 Z" fill="#ffffff" stroke="#1e293b" stroke-width="3"/>
+                                <path d="M 330 230 L 340 270 L 350 230 Z" fill="#dc2626"/>
+                                <circle cx="340" cy="180" r="32" fill="#ffedd5" stroke="#1e293b" stroke-width="3"/>
+                                <path d="M 310 170 C 320 130 370 130 370 170 C 360 145 320 145 310 170 Z" fill="#475569"/>
+                                <circle cx="330" cy="180" r="3.5" fill="#1e293b"/>
+                                <circle cx="350" cy="180" r="3.5" fill="#1e293b"/>
+                                <path d="M 333 192 Q 340 198 347 192" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+                                <rect x="330" y="235" width="40" height="50" rx="3" fill="#cbd5e1" stroke="#1e293b" stroke-width="2"/>
+                                <rect x="335" y="242" width="30" height="36" fill="#ffffff"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="bg-navy-900 text-white rounded-xl p-3 text-center shadow-lg">
+                        <p class="text-xs font-bold">✨ Modul Interaktif Pendidikan Pancasila</p>
+                        <p class="text-[10px] text-slate-300">Khusus Kelas XI Akuntansi & Keuangan Lembaga</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto w-full text-center text-xs text-slate-500 py-2 border-t border-slate-200/60">
+            © 2026 Portal Pembelajaran Digital • SMK Kelas XI Akuntansi 2
+        </div>
+    </section>
+
+    <!-- ==================== 2. HALAMAN LOGIN SIMULASI ==================== -->
+    <section id="loginView" class="hidden min-h-screen flex items-center justify-center p-4 relative overflow-hidden transition-all duration-700 ease-in-out">
+        <div class="absolute top-1/4 -left-20 w-80 h-80 bg-crimson-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-navy-900/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="w-full max-w-md bg-white rounded-3xl p-8 border border-slate-200 shadow-2xl relative z-10">
+            <div class="text-center space-y-3 mb-6">
+                <div class="w-20 h-20 mx-auto bg-gradient-to-tr from-crimson-600 to-navy-900 rounded-full p-1 shadow-lg animate-float">
+                    <div class="w-full h-full bg-white rounded-full flex items-center justify-center text-3xl">
+                        🧑‍🎓
+                    </div>
+                </div>
+                <h2 class="text-2xl font-extrabold text-navy-900">Selamat Datang 👋</h2>
+                <p class="text-xs text-slate-500 font-medium">Isi identitas untuk masuk ke Portal Pembelajaran Pendidikan Pancasila</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Nama Peserta Didik</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">👤</span>
+                        <input type="text" id="studentName" required placeholder="Masukkan nama Anda..." class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-navy-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-crimson-500 transition-all">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Kelas</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">🏫</span>
+                        <input type="text" id="studentClass" value="XI Akuntansi 2" readonly class="w-full pl-10 pr-4 py-3 bg-slate-100 border border-slate-200 rounded-xl text-sm font-bold text-navy-900 cursor-not-allowed">
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3.5 bg-navy-900 hover:bg-navy-800 text-white font-bold rounded-xl shadow-lg shadow-navy-900/20 hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer text-sm">
+                        <span>🔐 MASUK KE PORTAL</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 text-center">
+                <button onclick="goToCover()" class="text-xs font-bold text-slate-500 hover:text-crimson-600 transition-colors inline-flex items-center gap-1 cursor-pointer">
+                    ← Kembali ke Halaman Utama
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. DASHBOARD PORTAL ==================== -->
+    <div id="dashboardView" class="hidden min-h-screen flex flex-col justify-between transition-all duration-700 ease-in-out">
+        
+        <!-- Header & Navbar -->
+        <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-crimson-600 text-white flex items-center justify-center font-extrabold text-lg shadow-md shadow-crimson-600/20">
+                            PP
+                        </div>
+                        <div class="hidden sm:block">
+                            <h1 class="text-sm font-extrabold text-navy-900 leading-tight">Pendidikan Pancasila</h1>
+                            <p class="text-[10px] font-semibold text-slate-500">XI Akuntansi 2</p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Bar -->
+                    <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                        <a href="#beranda" class="px-3 py-2 rounded-lg text-xs font-bold text-navy-900 hover:bg-slate-100 transition-colors">🏠 Beranda</a>
+                        <a href="#petunjuk" class="px-3 py-2 rounded-lg text-xs font-bold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-colors">💡 Petunjuk</a>
+                        <a href="#bahan-ajar" class="px-3 py-2 rounded-lg text-xs font-bold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-colors">📚 Bahan Ajar</a>
+                        <a href="#media-ajar" class="px-3 py-2 rounded-lg text-xs font-bold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-colors">🖥️ PPT Ajar</a>
+                        <a href="#lkpd" class="px-3 py-2 rounded-lg text-xs font-bold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-colors">📝 LKPD</a>
+                        <a href="#game" class="px-3 py-2 rounded-lg text-xs font-bold text-slate-600 hover:text-navy-900 hover:bg-slate-100 transition-colors">🎮 Game</a>
+                    </nav>
+
+                    <!-- Student Profile Badge -->
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
+                            <span class="text-sm">👋</span>
+                            <span id="displayStudentName" class="text-xs font-extrabold text-navy-900">Siswa</span>
+                        </div>
+                        <button onclick="goToCover()" title="Keluar" class="p-2 text-slate-400 hover:text-crimson-600 hover:bg-crimson-50 rounded-lg transition-colors cursor-pointer">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Sub Nav -->
+            <div class="md:hidden flex overflow-x-auto py-2 px-4 border-t border-slate-100 space-x-2 text-xs scrollbar-none">
+                <a href="#beranda" class="whitespace-nowrap px-3 py-1.5 bg-slate-100 rounded-lg font-bold text-navy-900">🏠 Beranda</a>
+                <a href="#petunjuk" class="whitespace-nowrap px-3 py-1.5 bg-slate-100 rounded-lg font-bold text-slate-700">💡 Petunjuk</a>
+                <a href="#bahan-ajar" class="whitespace-nowrap px-3 py-1.5 bg-slate-100 rounded-lg font-bold text-slate-700">📚 Bahan Ajar</a>
+                <a href="#media-ajar" class="whitespace-nowrap px-3 py-1.5 bg-slate-100 rounded-lg font-bold text-slate-700">🖥️ PPT</a>
+                <a href="#lkpd" class="whitespace-nowrap px-3 py-1.5 bg-slate-100 rounded-lg font-bold text-slate-700">📝 LKPD</a>
+                <a href="#game" class="whitespace-nowrap px-3 py-1.5 bg-slate-100 rounded-lg font-bold text-slate-700">🎮 Game</a>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+            <!-- Hero Welcome Card -->
+            <section id="beranda" class="relative bg-gradient-to-r from-navy-900 via-navy-800 to-crimson-700 rounded-3xl p-6 sm:p-10 text-white shadow-xl overflow-hidden">
+                <div class="relative z-10 max-w-3xl space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs font-bold text-white uppercase tracking-wider">
+                        ✨ Portal Belajar Aktif
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight">
+                        👋 Halo, Selamat Datang <span id="welcomeStudentName" class="text-amber-300">Peserta Didik</span>!
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
+                        Portal Pembelajaran Pendidikan Pancasila • Kelas XI Akuntansi 2<br>
+                        Topik Utama: <strong class="text-white underline decoration-crimson-500 decoration-2">“Periodisasi Pemberlakuan UUD di Indonesia”</strong>
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4 Step Learning Timeline -->
+            <section id="petunjuk" class="space-y-6">
+                <div class="text-center sm:text-left space-y-1">
+                    <h3 class="text-xl font-extrabold text-navy-900 flex items-center justify-center sm:justify-start gap-2">
+                        💡 ALUR PEMBELAJARAN
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-500 font-medium">Ikuti 4 langkah terstruktur di bawah ini:</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <span class="text-2xl font-black text-crimson-600 block mb-2">01</span>
+                        <h4 class="font-extrabold text-navy-900 text-sm mb-1">Baca Bahan Ajar</h4>
+                        <p class="text-xs text-slate-500">Pelajari modul digital flipbook periodisasi UUD.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <span class="text-2xl font-black text-navy-800 block mb-2">02</span>
+                        <h4 class="font-extrabold text-navy-900 text-sm mb-1">Pelajari PPT</h4>
+                        <p class="text-xs text-slate-500">Simak presentasi ringkasan materi konstitusi.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <span class="text-2xl font-black text-crimson-600 block mb-2">03</span>
+                        <h4 class="font-extrabold text-navy-900 text-sm mb-1">Kerjakan LKPD</h4>
+                        <p class="text-xs text-slate-500">Selesaikan penugasan kelompok secara aktif.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                        <span class="text-2xl font-black text-navy-800 block mb-2">04</span>
+                        <h4 class="font-extrabold text-navy-900 text-sm mb-1">Ikuti Game Interaktif</h4>
+                        <p class="text-xs text-slate-500">Uji pemahaman Anda lewat kuis asesmen sumatif seru!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Learning Cards Grid -->
+            <section class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                    <h3 class="text-xl font-extrabold text-navy-900">🚀 MENU PEMBELAJARAN INTERAKTIF</h3>
+                    <span class="text-xs font-bold text-slate-400">4 Modul Utama</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    
+                    <!-- Card 1: BAHAN AJAR DIGITAL -->
+                    <div id="bahan-ajar" class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-14 h-14 rounded-2xl bg-crimson-50 text-crimson-600 flex items-center justify-center text-2xl font-bold">
+                                    📚
+                                </div>
+                                <span class="px-3 py-1 bg-crimson-100 text-crimson-700 text-[10px] font-extrabold uppercase rounded-full">Flipbook Interactive</span>
+                            </div>
+
+                            <h4 class="text-xl font-extrabold text-navy-900">BAHAN AJAR DIGITAL</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                                Flipbook interaktif tentang dinamika & periodisasi pemberlakuan UUD 1945 di Indonesia.
+                            </p>
+
+                            <!-- QR Code Preview -->
+                            <div class="pt-2 flex items-center gap-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                <div class="bg-white p-2 rounded-xl border border-slate-200 shadow-sm shrink-0 cursor-pointer" onclick="openQrModal('Bahan Ajar Digital', 'https://heyzine.com/flip-book/0c72abcabb.html', 'assets/bahan-ajar.jpeg')">
+                                    <div id="qr1-preview" class="w-16 h-16 flex items-center justify-center"></div>
+                                </div>
+                                <div class="text-xs space-y-1">
+                                    <p class="font-bold text-navy-900">Scan Barcode Bahan Ajar</p>
+                                    <p class="text-slate-500 text-[11px]">Klik barcode untuk memperbesar atau scan via HP.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <a href="https://heyzine.com/flip-book/0c72abcabb.html" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-crimson-600 hover:bg-crimson-700 text-white font-bold rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+                                <span>📖 BUKA BAHAN AJAR</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: MEDIA AJAR PPT -->
+                    <div id="media-ajar" class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-14 h-14 rounded-2xl bg-navy-50 text-navy-900 flex items-center justify-center text-2xl font-bold">
+                                    🖥️
+                                </div>
+                                <span class="px-3 py-1 bg-navy-100 text-navy-900 text-[10px] font-extrabold uppercase rounded-full">Slide PPT Canva</span>
+                            </div>
+
+                            <h4 class="text-xl font-extrabold text-navy-900">MEDIA AJAR PRESENTASI</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                                Slide presentasi visual interaktif kronologi konstitusi Indonesia dari masa ke masa.
+                            </p>
+
+                            <div class="pt-2 flex items-center gap-4 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                                <div class="text-3xl shrink-0">📊</div>
+                                <div class="text-xs space-y-1">
+                                    <p class="font-bold text-navy-900">Slide PPT Visual</p>
+                                    <p class="text-slate-500 text-[11px]">Memuat ringkasan UUD 1945, RIS, UUDS 1950, & Reformasi.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <a href="https://canva.link/tgue8qogats8f4d" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-navy-900 hover:bg-navy-800 text-white font-bold rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+                                <span>🖥️ BUKA PPT PEMBELAJARAN</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: LKPD KELOMPOK -->
+                    <div id="lkpd" class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold">
+                                    📝
+                                </div>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 text-[10px] font-extrabold uppercase rounded-full">Diskusi Kelompok</span>
+                            </div>
+
+                            <h4 class="text-xl font-extrabold text-navy-900">LKPD KELOMPOK</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                                Lembar Kerja Peserta Didik untuk kelompok. Scan barcode di bawah ini untuk membuka lembar kerja kelompok.
+                            </p>
+
+                            <div class="pt-2 bg-slate-50 p-4 rounded-2xl border border-slate-200 flex items-center gap-4">
+                                <div class="bg-white p-2 rounded-xl border border-slate-200 shadow-sm shrink-0 cursor-pointer" onclick="openQrModal('LKPD Kelompok', 'LKPD-Kelompok', 'assets/lkpd.jpeg')">
+                                    <div id="qr3-preview" class="w-20 h-20 flex items-center justify-center"></div>
+                                </div>
+                                <div class="text-xs space-y-1">
+                                    <p class="font-extrabold text-navy-900">📌 Barcode LKPD Kelompok</p>
+                                    <p class="text-slate-500 text-[11px]">Scan barcode untuk membuka tugas LKPD kelompok Anda.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <button onclick="alertModal('Scan Barcode LKPD', 'Arahkan kamera smartphone Anda pada barcode di atas untuk mengakses LKPD kelompok.')" class="w-full py-3.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+                                <span>📱 PETUNJUK SCAN LKPD</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: GAME INTERAKTIF -->
+                    <div id="game" class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl font-bold">
+                                    🎮
+                                </div>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 text-[10px] font-extrabold uppercase rounded-full">Asesmen Sumatif</span>
+                            </div>
+
+                            <h4 class="text-xl font-extrabold text-navy-900">GAME INTERAKTIF</h4>
+                            <p class="text-xs sm:text-sm text-slate-600 font-medium">
+                                Kuis edukasi interaktif periodisasi UUD. Mainkan dan capai nilai terbaik!
+                            </p>
+
+                            <div class="pt-2 flex items-center gap-4 bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                <div class="bg-white p-2 rounded-xl border border-slate-200 shadow-sm shrink-0 cursor-pointer" onclick="openQrModal('Game Interaktif', 'https://game-interaktif-1r6i.vercel.app/', 'assets/game-interaktif.jpeg')">
+                                    <div id="qr2-preview" class="w-16 h-16 flex items-center justify-center"></div>
+                                </div>
+                                <div class="text-xs space-y-1">
+                                    <p class="font-bold text-navy-900">Scan Barcode Game</p>
+                                    <p class="text-slate-500 text-[11px]">Mainkan langsung di HP via QR Code atau klik tombol di bawah.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <a href="https://game-interaktif-1r6i.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-gradient-to-r from-crimson-600 to-crimson-700 hover:from-crimson-500 hover:to-crimson-600 text-white font-bold rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+                                <span>🎮 MULAI GAME INTERAKTIF</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-navy-950 text-white mt-16 py-8 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+                <div class="flex justify-center items-center gap-2 font-bold text-sm">
+                    <span class="w-2 h-2 rounded-full bg-crimson-500"></span>
+                    <span>Pendidikan Pancasila • Kelas XI Akuntansi 2</span>
+                </div>
+                <p class="text-xs text-slate-400">
+                    Periodisasi Pemberlakuan UUD di Indonesia • Media Pembelajaran Interaktif
+                </p>
+                <p class="text-xs text-slate-300 font-medium pt-2 mt-2 border-t border-slate-800/50">
+                    Dikembangkan oleh: Febriza Laila Husna, S.Pd., M.Pd.
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- QR Code Zoom Modal -->
+    <div id="qrModal" class="hidden fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl relative border border-slate-100">
+            <button onclick="closeQrModal()" class="absolute top-4 right-4 text-slate-400 hover:text-navy-900 font-bold p-1 text-lg">✕</button>
+            <h3 id="modalTitle" class="text-lg font-extrabold text-navy-900 pt-2">QR Code Tautan</h3>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 inline-block mx-auto shadow-inner">
+                <div id="modalQrCanvas" class="w-48 h-48 flex items-center justify-center"></div>
+            </div>
+            <p id="modalUrlText" class="text-xs text-slate-500 break-all font-mono bg-slate-100 p-2 rounded-lg"></p>
+            <a id="modalOpenBtn" href="#" target="_blank" rel="noopener noreferrer" class="block w-full py-3 bg-crimson-600 hover:bg-crimson-700 text-white font-bold rounded-xl text-xs transition-colors">
+                🔗 Buka Tautan
+            </a>
+        </div>
+    </div>
+
+    <!-- Info Alert Modal -->
+    <div id="alertDialog" class="hidden fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl relative border border-slate-100">
+            <div class="w-12 h-12 bg-crimson-50 text-crimson-600 rounded-full flex items-center justify-center text-xl mx-auto font-bold">
+                ℹ️
+            </div>
+            <h3 id="alertTitle" class="text-lg font-extrabold text-navy-900">Informasi</h3>
+            <p id="alertBody" class="text-xs text-slate-600 leading-relaxed font-medium"></p>
+            <button onclick="closeAlertModal()" class="w-full py-3 bg-navy-900 hover:bg-navy-800 text-white font-bold rounded-xl text-xs transition-colors cursor-pointer">
+                Mengerti
+            </button>
+        </div>
+    </div>
+
+    <!-- JS App Logic -->
+    <script>
+        const coverView = document.getElementById('coverView');
+        const loginView = document.getElementById('loginView');
+        const dashboardView = document.getElementById('dashboardView');
+
+        function goToLogin() {
+            coverView.classList.add('hidden');
+            loginView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToCover() {
+            loginView.classList.add('hidden');
+            dashboardView.classList.add('hidden');
+            coverView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('studentName').value.trim();
+            if (nameInput) {
+                document.getElementById('displayStudentName').textContent = nameInput;
+                document.getElementById('welcomeStudentName').textContent = nameInput;
+
+                loginView.classList.add('hidden');
+                dashboardView.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                generateAllQrCodes();
+            }
+        }
+
+        // SVG QR Generator
+        function generateSvgQR(text, color = "#0f172a") {
+            return `
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+                <rect width="100" height="100" fill="#ffffff" rx="8"/>
+                <path d="M10,10 h25 v25 h-25 z M15,15 h15 v15 h-15 z" fill="${color}"/>
+                <path d="M65,10 h25 v25 h-25 z M70,15 h15 v15 h-15 z" fill="${color}"/>
+                <path d="M10,65 h25 v25 h-25 z M15,70 h15 v15 h-15 z" fill="${color}"/>
+                <rect x="42" y="12" width="8" height="16" rx="2" fill="#dc2626"/>
+                <rect x="12" y="42" width="16" height="8" rx="2" fill="${color}"/>
+                <rect x="40" y="40" width="20" height="20" rx="4" fill="#dc2626"/>
+                <rect x="68" y="42" width="12" height="18" rx="2" fill="${color}"/>
+                <rect x="42" y="68" width="16" height="12" rx="2" fill="${color}"/>
+                <rect x="68" y="68" width="20" height="20" rx="4" fill="#dc2626"/>
+            </svg>`;
+        }
+        function generateAllQrCodes() {
+            document.getElementById('qr1-preview').innerHTML = `<img src="assets/bahan-ajar.jpeg" alt="Bahan Ajar" class="w-full h-full object-contain" onerror="this.outerHTML=generateSvgQR('https://heyzine.com/flip-book/0c72abcabb.html')" />`;
+            document.getElementById('qr2-preview').innerHTML = `<img src="assets/game-interaktif.jpeg" alt="Game Interaktif" class="w-full h-full object-contain" onerror="this.outerHTML=generateSvgQR('https://game-interaktif-1r6i.vercel.app/')" />`;
+            document.getElementById('qr3-preview').innerHTML = `<img src="assets/lkpd.jpeg" alt="LKPD" class="w-full h-full object-contain" onerror="this.outerHTML=generateSvgQR('LKPD-Kelompok-XI-AK2', '#b91c1c')" />`;
+        }
+
+        function openQrModal(title, url, imgSrc) {
+            document.getElementById('modalTitle').textContent = `QR Code ${title}`;
+            document.getElementById('modalUrlText').textContent = url;
+            document.getElementById('modalOpenBtn').href = url.startsWith('http') ? url : '#';
+            if (imgSrc) {
+                document.getElementById('modalQrCanvas').innerHTML = `<img src="${imgSrc}" class="w-full h-full object-contain" onerror="this.outerHTML=generateSvgQR('${url}')" />`;
+            } else {
+                document.getElementById('modalQrCanvas').innerHTML = generateSvgQR(url);
+            }
+            document.getElementById('qrModal').classList.remove('hidden');
+        }
+
+        function closeQrModal() {
+            document.getElementById('qrModal').classList.add('hidden');
+        }
+
+        function alertModal(title, message) {
+            document.getElementById('alertTitle').textContent = title;
+            document.getElementById('alertBody').textContent = message;
+            document.getElementById('alertDialog').classList.remove('hidden');
+        }
+
+        function closeAlertModal() {
+            document.getElementById('alertDialog').classList.add('hidden');
+        }
+
+        window.onload = function() {
+            generateAllQrCodes();
+        };
+    </script>
+</body>
+</html>
